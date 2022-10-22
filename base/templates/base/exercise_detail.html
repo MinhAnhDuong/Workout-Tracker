@@ -1,0 +1,36 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+
+<div class="header-bar">
+    <a href="{% url 'exercises' %}">&#8592;</a>
+</div>
+
+<div class="exercise-detail">
+    <h1>{{exercise.title}}</h1>
+    {% if exercise.note %}
+        <br><h1>{{exercise.note}}</h1>
+    {% endif %}
+</div>
+
+<div id="search-add-wrapper"></div>
+<form class="search-bar" method="GET" style="margin-top: 10px; display:flex; ">
+    <input type="text" name="search-column" placeholder="Search your exercise" value="{{search_input}}">
+    <input class="search-button" type="submit" value="search">
+</form>
+<a id="add-link" href="{% url 'record-create' exercise.id %}">&#x2b;</a>
+{% for record in object.records_group.all %}
+    <div class="exercise-wrapper"> 
+        <div class="exercise-title">
+            <a href="{% url 'record' record.id %}">{{record.date}} </a>
+        </div>  
+        <a class="edit-link" href="{% url 'record-update' record.id %}">&#128393;</a>
+        <a class="delete-link" href="{% url 'record-delete' record.id %}">&#10007;</a>
+    </div>
+{% empty %}
+    <div class="exercise-detail">
+        <h1>No training records in the list.</h1>
+    </div>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+<div class="header-bar">
+    <a href="{% url 'exercises' %}">&#8592;</a>
+</div>
+
+<div class="exercise-detail">
+    <h1>{{record.exercise}}</h1>
+    <div class="record-detail">
+        <br><p>Date: {{record.date}}</p>
+        <p>Series: {{record.series}}</p>
+        <p>Reps: {{record.repetitions}}</p>
+        <p>weight: {{record.weight}}</p>
+        <p>Note: {{record.note}}</p>
+    </div>
+</div>
+
+{% endblock %}
