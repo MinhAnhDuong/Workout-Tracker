@@ -1,0 +1,29 @@
+{% extends 'base/main.html' %}
+
+{% block content %} 
+<div class="header-bar">
+    <h1>Hi, {{request.user|title}}</h1>
+</div>
+
+<div id="search-add-wrapper"></div>
+    <form class="search-bar" method="GET" style="margin-top: 20px; display:flex;">
+        <input type="text" name="search-column" placeholder="Search your exercise" value="{{search_input}}">
+        <input class="search-button" type="submit" value="search">
+    </form>
+    <a id="add-link" href="{% url 'exercise-create' %}">&#x2b;</a>
+    {% for exercise in exercises %}
+        <div class="exercise-wrapper"> 
+            <div class="exercise-title">
+                 
+                <a href="{% url 'exercise' exercise.id %}">{{exercise.title}}</a>
+            </div>
+            <a class="edit-link" href="{% url 'exercise-update' exercise.id %}">&#128393;</a>
+            <a class="delete-link" href="{% url 'exercise-delete' exercise.id %}">&#10007;</a>
+        </div>
+    {% empty %}
+    <div class="exercise-detail">
+        <h3>No exercises in the list.</h3>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

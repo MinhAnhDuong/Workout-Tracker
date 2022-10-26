@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Tracker</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Nunito:wght@200&display=swap" rel="stylesheet">
+ 
+    <style>
+
+        body{
+            background-color: #fff;
+            font-family: 'Raleway', sans-serif;
+            padding-top: 40px;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+            {
+                font-family: 'Raleway', sans-serif;
+            }
+
+        a, p {
+            color: #4b5156;
+        }
+
+        .main-body {
+            border-radius: 30px;
+            max-width: 400px;
+            height: 800px;
+            margin: auto;
+            -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+            background-color: rgba(237, 231, 225);
+            box-shadow: 5px 5px 23px -10px rgba(0, 0, 0, 0.21);
+        }
+
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            color: rgb(60, 60, 60);
+            padding: 20px 10px;
+            border-radius: 5px 5px 0 0;
+            margin-left: 13px;
+            margin-top: 10px;
+        }
+
+        .header-bar a{
+            color: #4b5156;
+            font-size: 40px;
+            text-decoration: none;
+        }
+
+        .exercise-wrapper {
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 30px;
+            margin-top: 10px;
+            margin-left: 20px;
+            margin-right: 20px;
+            background-color: #fff;
+        }
+        .exercise-detail {        
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 30px;
+            margin-top: 10px;
+            margin-left: 20px;
+            margin-right: 20px;
+            background-color: #fff;
+            opacity: 0.5;
+            font-size: 10px;
+        }
+        .record-detail {
+            display: block;
+            font-size: 10px;
+        }
+
+
+        .exercise-title {
+            display: flex;
+        }
+
+        .exercise-title a {
+            text-decoration: none;
+            color: #4b5156;
+            margin-left: 10px;
+        }
+
+        .delete-link {
+            text-decoration: none;
+            color: #4b5156;
+            font-size: 25px;
+            text-align: right;
+        }
+
+
+       #search-add-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+       } 
+       
+       #add-link {
+            display: inline-block;
+            color:#4b5156;
+            text-decoration: none;
+            font-size: 70px;
+            text-shadow: 1px 1px;
+            margin-top: -5px;
+            margin-left: 47%;
+       }
+
+       .search-bar {
+            width: 80%;
+            max-width: 700px;
+            height: 20px;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            border-radius: 60px;
+            padding: 10px 20px;
+            margin-left: 20px;
+       }
+
+        .search-bar input {
+            border-radius: 60px;
+            background-color: rgba(237, 231, 225);
+            flex: -1;
+            border: 0;
+            padding: 12px 25px 20px 18px;
+            margin-right: -10px;
+            font-size: 10px;
+            height: 10px;
+            color: #4b5156;
+       }
+
+        .search-bar input[type=text] {
+            margin-top: -4px;
+            height: 10px;
+       }
+       
+        input[type=text],
+       textarea {
+            display: block;
+            padding: 10px;
+            background: #fff;
+            opacity: 0.9;
+            width: 82%;
+            border-radius: 10px;
+            margin: auto;
+            border: 0;
+       }
+
+        textarea {
+            height: 40%;
+            font-size: 1rem;
+            font-family: lato;
+            color: black;
+        }
+
+        .button {
+            position: absolute;
+            display: block;
+            height: 30px;
+            width: 200px;
+            border: 1px solid;
+            border-radius: 20px;
+            bottom: -50px;
+            font-size: 1.1rem;
+            font-weight: 300;
+            outline: none;
+            background-color: #fff;
+            color: #4b5156;
+            transform: translate(53%, -500%);
+        }
+
+        .card-body {
+            margin-right: auto; 
+        }
+
+        label {
+            margin-left: 21px;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="main-body">
+        {% block content%}
+
+        {% endblock %}
+    </div>
+</body>
+</html>
