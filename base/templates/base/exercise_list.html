@@ -14,6 +14,7 @@
     {% for exercise in exercises %}
         <div class="exercise-wrapper"> 
             <div class="exercise-title">
+                 
                 <a href="{% url 'exercise' exercise.id %}">{{exercise.title}}</a>
             </div>
             <a class="edit-link" href="{% url 'exercise-update' exercise.id %}">&#128393;</a>
