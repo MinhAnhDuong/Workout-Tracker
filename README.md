@@ -8,9 +8,9 @@ Build on Django.
 
 ## How to run
 Application is not production ready. 
-A lauch application for preview
+A launch application for preview
 - install requirements
-- lauch Django dev server from root of the project
+- launch Django dev server from root of the project
 ```
 python3 manage.py runserver
 ```
