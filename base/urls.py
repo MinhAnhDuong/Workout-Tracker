@@ -1,8 +1,9 @@
 from django.urls import path
-from .views import ExerciseList, ExerciseDetail, ExerciseCreate, ExerciseUpdate, ExerciseDelete, TrainingRecordCreate, TrainingRecordDelete, TrainingRecordDetail, TrainingRecordDeleteSuccess, TrainingRecordUpdate
+from .views import ExerciseList, ExerciseDetail, ExerciseCreate, ExerciseUpdate, ExerciseDelete, TrainingRecordCreate, TrainingRecordDelete, TrainingRecordDetail, TrainingRecordDeleteSuccess, TrainingRecordUpdate, index
 
 urlpatterns = [
     #exercise
+    path('', index, name='index'),
     path('exercises/', ExerciseList.as_view(), name='exercises'),
     path('exercises/exercise/<int:pk>/', ExerciseDetail.as_view(), name='exercise'),
     path('exercises/exercise-create/', ExerciseCreate.as_view(), name= 'exercise-create'),

@@ -9,12 +9,13 @@ from django.shortcuts import redirect
 from .models import Exercise, TrainingRecord
 
 
-# Create your views here.
+def index(request):
+    return HttpResponseRedirect("exercises/")
+
 class ExerciseList(ListView):
     model = Exercise
     context_object_name = 'exercises'
 
-#search function
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
